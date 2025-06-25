@@ -11,28 +11,40 @@ class Practice
      */
     public function main($students)
     {
+        [$men, $women] = $this->separatedByGender($students);
+        $teams = $this->createMixedTeam($men, $women);
+
+        print_r($teams);
+    }
+
+    private function separatedByGender($students)
+    {
         $men = [];
         $women = [];
         foreach ($students as $student) {
             switch ($student['gender']) {
-            case 'man':
-                $men[] = $student;
-                break;
-            case 'woman':
-                $women[] = $student;
-                break;
+                case 'man':
+                    $men[] = $student;
+                    break;
+                case 'woman':
+                    $women[] = $student;
+                    break;
             }
         }
+        return [$men, $women];
+    }
 
+    private function createMixedTeam($men, $women)
+    {
         $teams = [[], [], []];
         foreach ($men as $key => $man) {
-            $teams[$key%3][] = $man;
+            $teams[$key % 3][] = $man;
         }
         foreach ($women as $key => $woman) {
-            $teams[$key%3][] = $woman;
+            $teams[$key % 3][] = $woman;
         }
 
-        print_r($teams);
+        return $teams;
     }
 }
 

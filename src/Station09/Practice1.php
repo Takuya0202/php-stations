@@ -9,16 +9,11 @@ class Practice1
         // ここにサンプルコードを記述
         $array = [1, 2, 3, 4, 5, 6];
 
-        $result = [];
         foreach ($array as $value) {
-            // if ($value % 2 === 0) {
-            //     continue;
-            // }
-
-            $result[] = $value;
+            $array[] = $value;
         }
 
-        print_r($result);
+        print_r($array);
     }
 }
 

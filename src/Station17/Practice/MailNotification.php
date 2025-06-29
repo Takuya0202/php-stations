@@ -17,11 +17,11 @@ class MailNotification implements NotificationInterface
 
     private function setHeader(string $header): void
     {
-        echo $header."を件名にセット\n";
+        echo $header . "を件名にセット\n";
     }
 
     private function setBody(string $message): void
     {
-        echo $message."を本文にセット\n";
+        echo $message . "を本文にセット\n";
     }
 }

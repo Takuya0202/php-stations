@@ -9,6 +9,9 @@ class Practice
     public function main(): void
     {
         // ここにサンプルコードを記述
+        $dog = new Dog();
+        $dog->barking();
+        echo Dog::$name;
     }
 }
 

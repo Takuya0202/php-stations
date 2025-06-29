@@ -4,6 +4,13 @@ namespace Src\Station12\Practice;
 
 class Animal
 {
+    public $type;
+    // コンストラクタの作成
+    public function __construct($type)
+    {
+        $this->type = $type;
+    }
+
     public function eat()
     {
         echo '食べる';
